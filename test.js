@@ -3,18 +3,30 @@ const {assert} = require('chai');
 
 describe('function areValidBrackets', function() {
     it('should validate (){}[]​', function() {
-        assert.equal(areValidBrackets('(){}[]​'), true);
+        assert.equal(areValidBrackets('(){}[]'), true);
     });
 
     it('should validate [{()}](){}​', function() {
-        assert.equal(areValidBrackets('[{()}](){}​'), true);
+        assert.equal(areValidBrackets('[{()}](){}'), true);
     });
 
     it('should invalidate []{()​', function() {
-        assert.equal(areValidBrackets('[]{()​'), false);
+        assert.equal(areValidBrackets('[]{()'), false);
     });
 
     it('should invalidate [{)]​', function() {
         assert.equal(areValidBrackets('[{)]'), false);
+    });
+
+    it('should invalidate [{]}​', function() {
+        assert.equal(areValidBrackets('[{)]'), false);
+    });
+
+    it('should invalidate (}{){}[]​', function() { 
+        assert.equal(areValidBrackets('(}{){}[]'), false);
+    });
+
+    it('should invalidate empty​', function() { 
+        assert.equal(areValidBrackets(''), false);
     });
 });

@@ -4,7 +4,7 @@
   "description": "algoritmo de identificacao de brackets validos",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test.js"
+    "test": "mocha --slow 20 test.js"
   },
   "author": "",
   "license": "ISC",
