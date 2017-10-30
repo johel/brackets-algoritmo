@@ -1,0 +1,15 @@
+{
+  "name": "brackets",
+  "version": "1.0.0",
+  "description": "algoritmo de identificacao de brackets validos",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  }
+}
