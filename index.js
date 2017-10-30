@@ -4,7 +4,7 @@ function isOpenBracket(c){
 
 function findBlocksToValidate(text){
     var result = [];
-    var length = text.length,count=0, startIndex=0,endIndex=0, blockToValidate;
+    var length = text.length,count=0, startIndex=0,endIndex=0;
 
     while(count < length){
         let currentChar = text[count];
@@ -15,7 +15,7 @@ function findBlocksToValidate(text){
             //a block will always have a length of its openBrackets characters multiplied by two
             // the other half must be the corresponding closing brackets
             let blockLength = (endIndex-startIndex) * 2; 
-            blockToValidate = text.slice(startIndex, startIndex+blockLength);
+            let blockToValidate = text.slice(startIndex, startIndex+blockLength);
             result.push(blockToValidate);
 
             //reposition the count in order to start at the first character of the next block
@@ -37,7 +37,7 @@ function isBlockValid(textBlock){
         ')':'('
     };
     var length = textBlock.length;
-    
+
     if(length % 2 !== 0 || length ===0 ) return false;
 
     let openBrackets = textBlock.slice(0, length/2);
